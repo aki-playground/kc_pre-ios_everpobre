@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
-    <entity name="NamedEntity" syncable="YES">
+    <entity name="NamedEntity" representedClassName="AOANamedEntity" syncable="YES">
         <attribute name="creationDate" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="modificationDate" attributeType="Date" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Note" parentEntity="NamedEntity" syncable="YES">
+    <entity name="Note" representedClassName="AOANote" parentEntity="NamedEntity" syncable="YES">
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="notebook" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="notes" inverseEntity="Notebook" syncable="YES"/>
     </entity>
-    <entity name="Notebook" parentEntity="NamedEntity" syncable="YES">
+    <entity name="Notebook" representedClassName="AOANotebook" parentEntity="NamedEntity" syncable="YES">
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Note" inverseName="notebook" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NamedEntity" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="NamedEntity" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Note" positionX="-191" positionY="201" width="128" height="73"/>
         <element name="Notebook" positionX="151" positionY="288" width="128" height="58"/>
     </elements>

@@ -13,6 +13,12 @@
 		AA190EBA1C835FA600728949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EB81C835FA600728949 /* LaunchScreen.storyboard */; };
 		AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */; };
 		AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA190EC51C83607400728949 /* Model.xcdatamodeld */; };
+		AA190EF81C8372E300728949 /* _AOANamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EED1C8372E300728949 /* _AOANamedEntity.m */; };
+		AA190EF91C8372E300728949 /* _AOANote.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EEF1C8372E300728949 /* _AOANote.m */; };
+		AA190EFA1C8372E300728949 /* _AOANotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF11C8372E300728949 /* _AOANotebook.m */; };
+		AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF31C8372E300728949 /* AOANamedEntity.m */; };
+		AA190EFC1C8372E300728949 /* AOANote.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF51C8372E300728949 /* AOANote.m */; };
+		AA190EFD1C8372E300728949 /* AOANotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF71C8372E300728949 /* AOANotebook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +32,18 @@
 		AA190EC21C835FBB00728949 /* AGTSimpleCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSimpleCoreDataStack.h; sourceTree = "<group>"; };
 		AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTSimpleCoreDataStack.m; sourceTree = "<group>"; };
 		AA190EC61C83607400728949 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		AA190EEC1C8372E300728949 /* _AOANamedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _AOANamedEntity.h; path = ../_AOANamedEntity.h; sourceTree = "<group>"; };
+		AA190EED1C8372E300728949 /* _AOANamedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _AOANamedEntity.m; path = ../_AOANamedEntity.m; sourceTree = "<group>"; };
+		AA190EEE1C8372E300728949 /* _AOANote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _AOANote.h; path = ../_AOANote.h; sourceTree = "<group>"; };
+		AA190EEF1C8372E300728949 /* _AOANote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _AOANote.m; path = ../_AOANote.m; sourceTree = "<group>"; };
+		AA190EF01C8372E300728949 /* _AOANotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _AOANotebook.h; path = ../_AOANotebook.h; sourceTree = "<group>"; };
+		AA190EF11C8372E300728949 /* _AOANotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _AOANotebook.m; path = ../_AOANotebook.m; sourceTree = "<group>"; };
+		AA190EF21C8372E300728949 /* AOANamedEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOANamedEntity.h; path = ../AOANamedEntity.h; sourceTree = "<group>"; };
+		AA190EF31C8372E300728949 /* AOANamedEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANamedEntity.m; path = ../AOANamedEntity.m; sourceTree = "<group>"; };
+		AA190EF41C8372E300728949 /* AOANote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOANote.h; path = ../AOANote.h; sourceTree = "<group>"; };
+		AA190EF51C8372E300728949 /* AOANote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANote.m; path = ../AOANote.m; sourceTree = "<group>"; };
+		AA190EF61C8372E300728949 /* AOANotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOANotebook.h; path = ../AOANotebook.h; sourceTree = "<group>"; };
+		AA190EF71C8372E300728949 /* AOANotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANotebook.m; path = ../AOANotebook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,18 @@
 		AA190EC11C835FAF00728949 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AA190EEC1C8372E300728949 /* _AOANamedEntity.h */,
+				AA190EED1C8372E300728949 /* _AOANamedEntity.m */,
+				AA190EEE1C8372E300728949 /* _AOANote.h */,
+				AA190EEF1C8372E300728949 /* _AOANote.m */,
+				AA190EF01C8372E300728949 /* _AOANotebook.h */,
+				AA190EF11C8372E300728949 /* _AOANotebook.m */,
+				AA190EF21C8372E300728949 /* AOANamedEntity.h */,
+				AA190EF31C8372E300728949 /* AOANamedEntity.m */,
+				AA190EF41C8372E300728949 /* AOANote.h */,
+				AA190EF51C8372E300728949 /* AOANote.m */,
+				AA190EF61C8372E300728949 /* AOANotebook.h */,
+				AA190EF71C8372E300728949 /* AOANotebook.m */,
 				AA190EC51C83607400728949 /* Model.xcdatamodeld */,
 				AA190EC21C835FBB00728949 /* AGTSimpleCoreDataStack.h */,
 				AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */,
@@ -156,9 +186,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA190EFD1C8372E300728949 /* AOANotebook.m in Sources */,
+				AA190EFA1C8372E300728949 /* _AOANotebook.m in Sources */,
+				AA190EF81C8372E300728949 /* _AOANamedEntity.m in Sources */,
+				AA190EF91C8372E300728949 /* _AOANote.m in Sources */,
 				AA190EB51C835FA600728949 /* AppDelegate.m in Sources */,
 				AA190EB21C835FA600728949 /* main.m in Sources */,
 				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
+				AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */,
+				AA190EFC1C8372E300728949 /* AOANote.m in Sources */,
 				AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
