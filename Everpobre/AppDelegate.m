@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AGTSimpleCoreDataStack.h"
 @interface AppDelegate ()
 
 @end
@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Model"];
+    
+    [self trastearConDatos];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

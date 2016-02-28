@@ -11,6 +11,8 @@
 		AA190EB51C835FA600728949 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EB41C835FA600728949 /* AppDelegate.m */; };
 		AA190EB71C835FA600728949 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA190EB61C835FA600728949 /* Assets.xcassets */; };
 		AA190EBA1C835FA600728949 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA190EB81C835FA600728949 /* LaunchScreen.storyboard */; };
+		AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */; };
+		AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA190EC51C83607400728949 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,9 @@
 		AA190EB61C835FA600728949 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA190EB91C835FA600728949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA190EBB1C835FA600728949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA190EC21C835FBB00728949 /* AGTSimpleCoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTSimpleCoreDataStack.h; sourceTree = "<group>"; };
+		AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTSimpleCoreDataStack.m; sourceTree = "<group>"; };
+		AA190EC61C83607400728949 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +58,7 @@
 		AA190EAF1C835FA600728949 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				AA190EC11C835FAF00728949 /* Models */,
 				AA190EB31C835FA600728949 /* AppDelegate.h */,
 				AA190EB41C835FA600728949 /* AppDelegate.m */,
 				AA190EB61C835FA600728949 /* Assets.xcassets */,
@@ -69,6 +75,16 @@
 				AA190EB11C835FA600728949 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA190EC11C835FAF00728949 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA190EC51C83607400728949 /* Model.xcdatamodeld */,
+				AA190EC21C835FBB00728949 /* AGTSimpleCoreDataStack.h */,
+				AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +158,8 @@
 			files = (
 				AA190EB51C835FA600728949 /* AppDelegate.m in Sources */,
 				AA190EB21C835FA600728949 /* main.m in Sources */,
+				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
+				AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +300,20 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AA190EC51C83607400728949 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AA190EC61C83607400728949 /* Model.xcdatamodel */,
+			);
+			currentVersion = AA190EC61C83607400728949 /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = ../Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AA190EA51C835FA600728949 /* Project object */;
 }
