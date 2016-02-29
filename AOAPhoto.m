@@ -21,7 +21,7 @@
                        context:(NSManagedObjectContext *) context{
     
     AOAPhoto *p = [NSEntityDescription insertNewObjectForEntityForName:[AOAPhoto entityName] inManagedObjectContext:context];
-    p.imageData = UIImagePNGRepresentation(image);
+    p.imageData = UIImageJPEGRepresentation(image, 0.9);
     return p;
 }
 

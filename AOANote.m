@@ -2,11 +2,14 @@
 
 @interface AOANote ()
 
-// Private interface goes here.
-
 @end
 
 @implementation AOANote
+
+
++(NSArray *) observableKeyNames{
+    return @[@"creationDate", @"name", @"notebook", @"photo"];
+}
 
 +(instancetype) noteWithName:(NSString *) name notebook:(AOANotebook *) notebook context: (NSManagedObjectContext *) context{
     AOANote *n = [NSEntityDescription insertNewObjectForEntityForName:[AOANote entityName] inManagedObjectContext:context];
