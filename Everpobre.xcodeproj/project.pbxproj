@@ -50,6 +50,8 @@
 		AA190EFF1C837A4E00728949 /* _AOAPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AOAPhoto.m; sourceTree = SOURCE_ROOT; };
 		AA190F001C837A4E00728949 /* AOAPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAPhoto.h; sourceTree = SOURCE_ROOT; };
 		AA190F011C837A4E00728949 /* AOAPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAPhoto.m; sourceTree = SOURCE_ROOT; };
+		AA190F041C84BB4A00728949 /* Everpobre-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Everpobre-Prefix.pch"; sourceTree = "<group>"; };
+		AA190F061C84BE7600728949 /* settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = settings.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,8 @@
 		AA190EB01C835FA600728949 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AA190F061C84BE7600728949 /* settings.h */,
+				AA190F041C84BB4A00728949 /* Everpobre-Prefix.pch */,
 				AA190EB11C835FA600728949 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -309,6 +313,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Everpobre/Everpobre-Prefix.pch";
 				INFOPLIST_FILE = Everpobre/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.akixe.keepcoding.progios.Everpobre;
@@ -320,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Everpobre/Everpobre-Prefix.pch";
 				INFOPLIST_FILE = Everpobre/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.akixe.keepcoding.progios.Everpobre;

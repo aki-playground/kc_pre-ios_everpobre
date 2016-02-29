@@ -23,7 +23,10 @@
     
     self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Model"];
     
+    
     [self trastearConDatos];
+    
+    [self autoSave];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
@@ -73,13 +76,34 @@
                   context: self.model.context];
     
     //Búsquedas
+    NSFetchRequest *req = [[NSFetchRequest alloc] initWithEntityName:[AOANote entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:AOANamedEntityAttributes.name ascending:YES],
+                            [NSSortDescriptor sortDescriptorWithKey:AOANamedEntityAttributes.modificationDate ascending:NO]];
     
+    NSError *error = nil;
+    NSArray *results = [self.model.context executeFetchRequest:req error:&error];
+    
+    if(results == nil){
+        NSLog(@"Error al buscar %@", results);
+    } else {
+        NSLog(@"Results %@", results);
+    }
     [self save];
 }
 
 -(void) save {
-    self.model saveWithErrorBlock:^(NSError *error) {
+    [self.model saveWithErrorBlock:^(NSError *error) {
         NSLog(@"Error al guardar %s \n\n %@", __func__, error); //__func__ lo entiende el compilador y te da el nombre de la función
+    }];
+}
+
+-(void) autoSave {
+    if (AUTO_SAVE){
+        NSLog(@"Autosaving...");
+        
+        [self save];
+        
+        [self performSelector:@selector(autoSave) withObject:nil afterDelay:AUTO_SAVE_DELAY_IN_SECONDS];
     }
 }
 @end
