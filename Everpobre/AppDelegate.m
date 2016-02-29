@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "AGTSimpleCoreDataStack.h"
 
+#import "AOANote.h"
+#import "AOANotebook.h"
+
 @interface AppDelegate ()
 
 @end
@@ -55,13 +58,9 @@
 #pragma mark - Utils
 
 - (void) trastearConDatos{
-    //Crear una nota
-    NSManagedObject *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:self.model.context];
+    AOANotebook *novias = [AOANotebook notebookWithName:@"Ex-novias" context:self.model.context];
     
-    // Asignar valores a las propiedades mediante KVC
-    [note setValue:@"WWDC" forKey:@"name"];
-    [note setValue:[NSDate date] forKey:@"creationDate"];
- 
-    NSLog(@"El nombre es %@", [note valueForKey:@"name"]);
+    AOANote *camila = [AOANote noteWithName:@"Camila" notebook:novias context:self.model.context];
+    AOANote *pampita = [AOANote noteWithName:@"Pampita" notebook:novias context:self.model.context];
 }
 @end
