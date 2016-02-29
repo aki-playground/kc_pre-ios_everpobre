@@ -19,6 +19,8 @@
 		AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF31C8372E300728949 /* AOANamedEntity.m */; };
 		AA190EFC1C8372E300728949 /* AOANote.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF51C8372E300728949 /* AOANote.m */; };
 		AA190EFD1C8372E300728949 /* AOANotebook.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EF71C8372E300728949 /* AOANotebook.m */; };
+		AA190F021C837A4E00728949 /* _AOAPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190EFF1C837A4E00728949 /* _AOAPhoto.m */; };
+		AA190F031C837A4E00728949 /* AOAPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190F011C837A4E00728949 /* AOAPhoto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		AA190EF51C8372E300728949 /* AOANote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANote.m; path = ../AOANote.m; sourceTree = "<group>"; };
 		AA190EF61C8372E300728949 /* AOANotebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOANotebook.h; path = ../AOANotebook.h; sourceTree = "<group>"; };
 		AA190EF71C8372E300728949 /* AOANotebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANotebook.m; path = ../AOANotebook.m; sourceTree = "<group>"; };
+		AA190EFE1C837A4E00728949 /* _AOAPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AOAPhoto.h; sourceTree = SOURCE_ROOT; };
+		AA190EFF1C837A4E00728949 /* _AOAPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AOAPhoto.m; sourceTree = SOURCE_ROOT; };
+		AA190F001C837A4E00728949 /* AOAPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAPhoto.h; sourceTree = SOURCE_ROOT; };
+		AA190F011C837A4E00728949 /* AOAPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAPhoto.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,10 @@
 				AA190EF61C8372E300728949 /* AOANotebook.h */,
 				AA190EF71C8372E300728949 /* AOANotebook.m */,
 				AA190EC51C83607400728949 /* Model.xcdatamodeld */,
+				AA190EFE1C837A4E00728949 /* _AOAPhoto.h */,
+				AA190EFF1C837A4E00728949 /* _AOAPhoto.m */,
+				AA190F001C837A4E00728949 /* AOAPhoto.h */,
+				AA190F011C837A4E00728949 /* AOAPhoto.m */,
 				AA190EC21C835FBB00728949 /* AGTSimpleCoreDataStack.h */,
 				AA190EC31C835FBB00728949 /* AGTSimpleCoreDataStack.m */,
 			);
@@ -190,12 +200,14 @@
 				AA190EFA1C8372E300728949 /* _AOANotebook.m in Sources */,
 				AA190EF81C8372E300728949 /* _AOANamedEntity.m in Sources */,
 				AA190EF91C8372E300728949 /* _AOANote.m in Sources */,
+				AA190F031C837A4E00728949 /* AOAPhoto.m in Sources */,
 				AA190EB51C835FA600728949 /* AppDelegate.m in Sources */,
 				AA190EB21C835FA600728949 /* main.m in Sources */,
 				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
 				AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */,
 				AA190EFC1C8372E300728949 /* AOANote.m in Sources */,
 				AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */,
+				AA190F021C837A4E00728949 /* _AOAPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

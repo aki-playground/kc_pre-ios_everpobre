@@ -10,9 +10,11 @@ extern const struct AOANoteAttributes {
 
 extern const struct AOANoteRelationships {
 	__unsafe_unretained NSString *notebook;
+	__unsafe_unretained NSString *photo;
 } AOANoteRelationships;
 
 @class AOANotebook;
+@class AOAPhoto;
 
 @interface AOANoteID : AOANamedEntityID {}
 @end
@@ -31,6 +33,10 @@ extern const struct AOANoteRelationships {
 
 //- (BOOL)validateNotebook:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) AOAPhoto *photo;
+
+//- (BOOL)validatePhoto:(id*)value_ error:(NSError**)error_;
+
 @end
 
 @interface _AOANote (CoreDataGeneratedPrimitiveAccessors)
@@ -40,5 +46,8 @@ extern const struct AOANoteRelationships {
 
 - (AOANotebook*)primitiveNotebook;
 - (void)setPrimitiveNotebook:(AOANotebook*)value;
+
+- (AOAPhoto*)primitivePhoto;
+- (void)setPrimitivePhoto:(AOAPhoto*)value;
 
 @end
