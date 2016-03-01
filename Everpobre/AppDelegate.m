@@ -8,9 +8,10 @@
 
 #import "AppDelegate.h"
 #import "AGTSimpleCoreDataStack.h"
-
+#import "AOANotebooksViewController.h"
 #import "AOANote.h"
 #import "AOANotebook.h"
+#import "UIViewController+Navigation.h"
 
 @interface AppDelegate ()
 
@@ -24,11 +25,29 @@
     self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Model"];
     
     
-    [self trastearConDatos];
-    
     [self autoSave];
+    //Recuperar las libretas
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[AOANotebook entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor
+                             sortDescriptorWithKey:AOANamedEntityAttributes.modificationDate
+                             ascending:NO],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:AOANamedEntityAttributes.name
+                             ascending:YES]];
+    NSFetchedResultsController *results = [[NSFetchedResultsController alloc]
+                                           initWithFetchRequest:req
+                                           managedObjectContext:self.model.context
+                                           sectionNameKeyPath:nil
+                                           cacheName:nil];
+    
+    AOANotebooksViewController *nbVC = [[AOANotebooksViewController alloc]
+                                        initWithFetchedResultsController:results
+                                        style:UITableViewStylePlain];
+    
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window.rootViewController = [nbVC wreappedInNavigation];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -103,7 +122,9 @@
         
         [self save];
         
-        [self performSelector:@selector(autoSave) withObject:nil afterDelay:AUTO_SAVE_DELAY_IN_SECONDS];
+        [self performSelector: @selector(autoSave)
+                   withObject: nil
+                   afterDelay:AUTO_SAVE_DELAY_IN_SECONDS];
     }
 }
 @end

@@ -13,6 +13,7 @@
 +(instancetype) notebookWithName:(NSString *) name context: (NSManagedObjectContext *) context{
     AOANotebook *nb = [NSEntityDescription insertNewObjectForEntityForName:[AOANotebook entityName] inManagedObjectContext:context];
     
+    nb.name = name;
     nb.creationDate = [NSDate date];
     nb.modificationDate = [NSDate date];
     
