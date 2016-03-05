@@ -9,10 +9,12 @@ extern const struct AOANoteAttributes {
 } AOANoteAttributes;
 
 extern const struct AOANoteRelationships {
+	__unsafe_unretained NSString *location;
 	__unsafe_unretained NSString *notebook;
 	__unsafe_unretained NSString *photo;
 } AOANoteRelationships;
 
+@class AOALocation;
 @class AOANotebook;
 @class AOAPhoto;
 
@@ -29,6 +31,10 @@ extern const struct AOANoteRelationships {
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) AOALocation *location;
+
+//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) AOANotebook *notebook;
 
 //- (BOOL)validateNotebook:(id*)value_ error:(NSError**)error_;
@@ -43,6 +49,9 @@ extern const struct AOANoteRelationships {
 
 - (NSString*)primitiveText;
 - (void)setPrimitiveText:(NSString*)value;
+
+- (AOALocation*)primitiveLocation;
+- (void)setPrimitiveLocation:(AOALocation*)value;
 
 - (AOANotebook*)primitiveNotebook;
 - (void)setPrimitiveNotebook:(AOANotebook*)value;

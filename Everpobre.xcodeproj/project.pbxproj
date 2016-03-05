@@ -36,6 +36,8 @@
 		AAD766311C8B332C002662D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD7662F1C8B318A002662D1 /* MapKit.framework */; };
 		AAD766351C8B4C85002662D1 /* AOAPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */; };
 		AAD766361C8B4C85002662D1 /* AOAPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */; };
+		AAD7663C1C8B9577002662D1 /* _AOALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD766391C8B9577002662D1 /* _AOALocation.m */; };
+		AAD7663D1C8B9577002662D1 /* AOALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7663B1C8B9577002662D1 /* AOALocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,10 @@
 		AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAPhotoViewController.m; sourceTree = "<group>"; };
 		AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOAPhotoViewController.xib; sourceTree = "<group>"; };
 		AAD766371C8B9312002662D1 /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
+		AAD766381C8B9577002662D1 /* _AOALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AOALocation.h; sourceTree = SOURCE_ROOT; };
+		AAD766391C8B9577002662D1 /* _AOALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AOALocation.m; sourceTree = SOURCE_ROOT; };
+		AAD7663A1C8B9577002662D1 /* AOALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOALocation.h; sourceTree = SOURCE_ROOT; };
+		AAD7663B1C8B9577002662D1 /* AOALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOALocation.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,10 @@
 		AA190EC11C835FAF00728949 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAD766381C8B9577002662D1 /* _AOALocation.h */,
+				AAD766391C8B9577002662D1 /* _AOALocation.m */,
+				AAD7663A1C8B9577002662D1 /* AOALocation.h */,
+				AAD7663B1C8B9577002662D1 /* AOALocation.m */,
 				AA190EEC1C8372E300728949 /* _AOANamedEntity.h */,
 				AA190EED1C8372E300728949 /* _AOANamedEntity.m */,
 				AA190EEE1C8372E300728949 /* _AOANote.h */,
@@ -329,6 +339,8 @@
 				AA8CC4661C858181001F8070 /* UIViewController+Navigation.m in Sources */,
 				AAD766351C8B4C85002662D1 /* AOAPhotoViewController.m in Sources */,
 				AA190EB21C835FA600728949 /* main.m in Sources */,
+				AAD7663D1C8B9577002662D1 /* AOALocation.m in Sources */,
+				AAD7663C1C8B9577002662D1 /* _AOALocation.m in Sources */,
 				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
 				AA190F091C85476600728949 /* AGTCoreDataTableViewController.m in Sources */,
 				AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */,
@@ -489,7 +501,7 @@
 				AAD766371C8B9312002662D1 /* Model2.xcdatamodel */,
 				AA190EC61C83607400728949 /* Model.xcdatamodel */,
 			);
-			currentVersion = AA190EC61C83607400728949 /* Model.xcdatamodel */;
+			currentVersion = AAD766371C8B9312002662D1 /* Model2.xcdatamodel */;
 			name = Model.xcdatamodeld;
 			path = ../Model.xcdatamodeld;
 			sourceTree = "<group>";

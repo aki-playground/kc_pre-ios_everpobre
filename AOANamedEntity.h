@@ -2,4 +2,6 @@
 
 @interface AOANamedEntity : _AOANamedEntity {}
 // Custom logic goes here.
+
+
 @end

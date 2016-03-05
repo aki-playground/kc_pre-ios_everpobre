@@ -8,6 +8,7 @@ const struct AOANoteAttributes AOANoteAttributes = {
 };
 
 const struct AOANoteRelationships AOANoteRelationships = {
+	.location = @"location",
 	.notebook = @"notebook",
 	.photo = @"photo",
 };
@@ -42,6 +43,8 @@ const struct AOANoteRelationships AOANoteRelationships = {
 }
 
 @dynamic text;
+
+@dynamic location;
 
 @dynamic notebook;
 
