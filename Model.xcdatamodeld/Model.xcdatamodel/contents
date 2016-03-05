@@ -19,7 +19,7 @@
     </entity>
     <elements>
         <element name="NamedEntity" positionX="-63" positionY="-18" width="128" height="88"/>
-        <element name="Note" positionX="-191" positionY="201" width="128" height="88"/>
+        <element name="Note" positionX="-191" positionY="201" width="128" height="90"/>
         <element name="Notebook" positionX="151" positionY="288" width="128" height="58"/>
         <element name="Photo" positionX="-119" positionY="495" width="128" height="73"/>
     </elements>

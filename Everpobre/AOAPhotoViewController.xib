@@ -31,6 +31,11 @@
                                 <action selector="applyVintageImage:" destination="-1" id="IPj-iQ-qfi"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Faces" id="K2Y-Sm-zAv">
+                            <connections>
+                                <action selector="detectFaces:" destination="-1" id="ynT-a0-xVr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="acc-Wy-YJp"/>
                         <barButtonItem systemItem="trash" id="XRY-iq-WUF">
                             <connections>

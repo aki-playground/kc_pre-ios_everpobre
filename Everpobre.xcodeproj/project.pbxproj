@@ -92,6 +92,7 @@
 		AAD766321C8B4C85002662D1 /* AOAPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAPhotoViewController.h; sourceTree = "<group>"; };
 		AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAPhotoViewController.m; sourceTree = "<group>"; };
 		AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOAPhotoViewController.xib; sourceTree = "<group>"; };
+		AAD766371C8B9312002662D1 /* Model2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model2.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +486,7 @@
 		AA190EC51C83607400728949 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AAD766371C8B9312002662D1 /* Model2.xcdatamodel */,
 				AA190EC61C83607400728949 /* Model.xcdatamodel */,
 			);
 			currentVersion = AA190EC61C83607400728949 /* Model.xcdatamodel */;

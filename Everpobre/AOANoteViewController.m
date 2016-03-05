@@ -74,6 +74,10 @@
     
     UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImageDetail:)];
     [self.photoView addGestureRecognizer:tap];
+    
+    UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayShareController:)];
+    self.navigationItem.rightBarButtonItem = share;
+
 }
 
 -(void) viewWillDisappear:(BOOL)animated
@@ -215,5 +219,31 @@
                                    initWithModel:self.model.photo];
     
     [self.navigationController pushViewController:pVC animated:YES];
+}
+
+-(void) displayShareController:(id)sender
+{
+    //Crear un UIActivityController
+    UIActivityViewController *aVC = [[UIActivityViewController alloc] initWithActivityItems:[self arrayOfItems] applicationActivities:nil];
+    
+    [self presentViewController:aVC animated:YES completion:nil];
+}
+
+-(NSArray *) arrayOfItems
+{
+    NSMutableArray *items = [NSMutableArray array];
+    if(self.model.name){
+        [items addObject:self.model.name];
+    }
+    
+    if(self.model.text){
+        [items addObject:self.model.text];
+    }
+    
+    if(self.model.photo.image){
+        [items addObject:self.model.photo.image];
+    }
+    
+    return items;
 }
 @end

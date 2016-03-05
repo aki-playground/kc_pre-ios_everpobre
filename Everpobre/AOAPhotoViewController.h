@@ -14,4 +14,5 @@
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)deletePhoto:(id)sender;
 - (IBAction)applyVintageImage:(id)sender;
+- (IBAction)detectFaces:(id)sender;
 @end

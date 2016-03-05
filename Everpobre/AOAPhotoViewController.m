@@ -136,4 +136,39 @@
     
    
 }
+
+-(IBAction)detectFaces:(id)sender
+{
+    NSArray *features = [self featuresInImage:self.photoView.image];
+    
+    if(features){
+        CIFeature *face = [features lastObject];
+        CGRect faceBounds = [face bounds];
+        
+        CIImage *image = [CIImage imageWithCGImage:self.photoView.image.CGImage];
+        CIImage *crop = [image imageByCroppingToRect:faceBounds];
+        
+        UIImage *newImage = [UIImage imageWithCIImage:crop];
+        self.photoView.image = newImage;
+    }
+    
+}
+
+-(NSArray *) featuresInImage : (UIImage *) image
+{
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CIDetector *detector = [CIDetector
+                            detectorOfType:CIDetectorAccuracy context:context
+                            options:@{CIDetectorAccuracy:CIDetectorAccuracyHigh}];
+    
+    CIImage *img = [CIImage imageWithCGImage:image.CGImage];
+    
+    NSArray *features = [detector featuresInImage:img];
+    
+    if([features count]){
+        return features;
+    } else {
+        return nil;
+    }
+}
 @end
