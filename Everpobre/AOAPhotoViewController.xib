@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AOAPhotoViewController">
             <connections>
+                <outlet property="activityView" destination="avv-MK-9Gg" id="EZ9-wt-ol3"/>
                 <outlet property="photoView" destination="kC9-vn-R7V" id="Jle-Rw-pQo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,6 +26,12 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Ahr-Qb-nk6"/>
+                        <barButtonItem title="Vintage" id="3d5-ia-WIa">
+                            <connections>
+                                <action selector="applyVintageImage:" destination="-1" id="IPj-iQ-qfi"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="acc-Wy-YJp"/>
                         <barButtonItem systemItem="trash" id="XRY-iq-WUF">
                             <connections>
                                 <action selector="deletePhoto:" destination="-1" id="EBX-SW-T3i"/>
@@ -35,6 +42,9 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kC9-vn-R7V">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                 </imageView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="avv-MK-9Gg">
+                    <rect key="frame" x="150" y="252" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="139" y="390"/>

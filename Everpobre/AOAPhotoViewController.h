@@ -10,6 +10,8 @@
 #import "AOADetailViewController.h"
 @interface AOAPhotoViewController : UIViewController<AOADetailViewController>
 @property (weak, nonatomic) IBOutlet UIImageView *photoView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 - (IBAction)takePhoto:(id)sender;
 - (IBAction)deletePhoto:(id)sender;
+- (IBAction)applyVintageImage:(id)sender;
 @end

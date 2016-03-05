@@ -8,6 +8,8 @@
 
 #import "AOAPhotoViewController.h"
 #import "AOAPhoto.h"
+@import CoreImage;
+
 @interface AOAPhotoViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) AOAPhoto *model;
 @end
@@ -90,5 +92,48 @@
                      }];
     
     self.model.image = nil;
+}
+- (IBAction)applyVintageImage:(id)sender
+{
+
+    //Crear contexto
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    //Crear CIImage de entrada
+    CIImage *image = [CIImage imageWithCGImage:self.model.image.CGImage];
+    
+    //Crear Filtro Foto Antigua
+    CIFilter *filterOld = [CIFilter filterWithName:@"CIFalseColor"];
+    [filterOld setDefaults];
+    [filterOld setValue:image forKey:kCIInputImageKey];
+    
+    //CRear filtro Vignette
+    CIFilter *filterVignette = [CIFilter filterWithName:@"CIVignette"];
+    [filterVignette setDefaults];
+    [filterVignette setValue:@12 forKey:kCIInputIntensityKey];
+    
+    //Encadenar Filtros
+    [filterVignette setValue:filterOld.outputImage forKey:kCIInputImageKey];
+    
+    //Crear imagen de salida
+    CIImage *output = filterVignette.outputImage;
+    
+    //Aplicar el filtro
+    [self.activityView startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        CGImageRef res = [context createCGImage: output
+                                       fromRect:[output extent]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.activityView stopAnimating];
+            //Guardar nueva imagen
+            UIImage *img = [UIImage imageWithCGImage:res];
+            self.photoView.image = img;
+            
+            CGImageRelease(res);
+        });
+        
+    });
+    
+   
 }
 @end
