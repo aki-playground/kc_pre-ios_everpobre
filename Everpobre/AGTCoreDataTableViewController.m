@@ -7,7 +7,7 @@
 //
 
 #import "AGTCoreDataTableViewController.h"
-
+#import "AOADetailViewController.h"
 
 
 @interface AGTCoreDataTableViewController()
@@ -209,6 +209,23 @@
 
         [self presentViewController:alertController animated:YES completion:nil];
     }
+}
+
+#pragma mark - Delegate
+-(void)         tableView:(UITableViewController *) tableView
+ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    //NSAssert(self.detailViewControllerClassName, @"You must set a detailViewController class name!");
+    
+    id detailModel = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    UIViewController<AOADetailViewController> *detailVC = [[NSClassFromString(self.detailViewControllerClassName) alloc] initWithModel:detailModel];
+    
+    [self.navigationController pushViewController: detailVC
+                                         animated: YES];
+    
+    
 }
 
 @end

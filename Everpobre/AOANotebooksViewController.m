@@ -9,6 +9,8 @@
 #import "AOANotebooksViewController.h"
 #import "AOANotebook.h"
 #import "AOANotebookCellView.h"
+#import "AOANote.h"
+#import "AOANotesViewController.h"
 
 @interface AOANotebooksViewController ()
 
@@ -52,6 +54,7 @@
     UINib *cellNib = [UINib nibWithNibName:@"AOANoteBookCellView" bundle:nil];
     
     [self.tableView registerNib:cellNib forCellReuseIdentifier:[AOANotebookCellView cellId]];
+    //self.detailViewControllerClassName = NSStringFromClass([AOANotesViewController class]);
 }
 
 -(void) viewWillDisappear:(BOOL)animated{
@@ -71,27 +74,62 @@
 
 
 #pragma mark - Data Source
--(void) tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
-forRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)     tableView:(UITableView *)tableView
+   commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+    forRowAtIndexPath:(NSIndexPath *)indexPath
+{
     if (editingStyle == UITableViewCellEditingStyleDelete){
         AOANotebook *del = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [self.fetchedResultsController.managedObjectContext deleteObject:del];
     }
 }
 -(UITableViewCell *) tableView: (UITableView *) tableView
-         cellForRowAtIndexPath:(NSIndexPath *) indexPath{
-    
+         cellForRowAtIndexPath: (NSIndexPath *) indexPath
+{
     //Averiguar Notebook
     AOANotebook *nb = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
     //Crear una celda
     AOANotebookCellView *cell = [tableView dequeueReusableCellWithIdentifier:[AOANotebookCellView cellId]];
     cell.nameView.text = nb.name;
-    cell.numberOfNotesView.text = [NSString stringWithFormat: @"%lu", [nb.notes count] ];
+    cell.numberOfNotesView.text = [NSString stringWithFormat: @"%ul", [nb.notes count] ];
     return cell;
 }
 
+-(void)         tableView: (UITableView *)tableView
+  didSelectRowAtIndexPath: (NSIndexPath *)indexPath
+{
+    //crear fecthc request
+    
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[AOANote entityName]];
+    req.sortDescriptors = @[[NSSortDescriptor
+                             sortDescriptorWithKey:AOANamedEntityAttributes.name
+                             ascending:YES],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:AOANamedEntityAttributes.creationDate ascending:NO],
+                            [NSSortDescriptor
+                             sortDescriptorWithKey:AOANamedEntityAttributes.modificationDate ascending:NO]];
+    req.predicate = [NSPredicate predicateWithFormat:@"notebook = %@", [self.fetchedResultsController objectAtIndexPath:indexPath]];
+    
+    NSFetchedResultsController *fC = [[NSFetchedResultsController alloc]
+                                        initWithFetchRequest: req
+                                        managedObjectContext: self.fetchedResultsController.managedObjectContext
+                                        sectionNameKeyPath: nil
+                                        cacheName: nil];
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    layout.itemSize = CGSizeMake(140, 150);
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    layout.sectionInset = UIEdgeInsetsMake(10 , 10, 10, 10);
+    
+    AOANotesViewController *notesVC = [AOANotesViewController coreDataCollectionViewControllerWithFetchedResultsController:fC layout:layout];
+    
+    notesVC.notebook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [self.navigationController pushViewController:notesVC animated:YES];
+}
 
 #pragma mark - Proximity Sensor
 -(BOOL) hasProximitySensor{

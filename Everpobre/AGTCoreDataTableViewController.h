@@ -22,7 +22,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 @interface AGTCoreDataTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
-
+@property (strong, nonatomic) NSString *detailViewControllerClassName;
 
 
 

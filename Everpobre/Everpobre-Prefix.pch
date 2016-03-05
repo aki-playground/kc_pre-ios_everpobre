@@ -9,6 +9,7 @@
 
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 #import <Foundation/Foundation.h>
 #import "settings.h"
 #endif

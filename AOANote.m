@@ -17,6 +17,7 @@
     n.creationDate = [NSDate date];
     n.notebook = notebook;
     n.modificationDate = [NSDate date];
+    n.name = name;
     
     return n;
 }

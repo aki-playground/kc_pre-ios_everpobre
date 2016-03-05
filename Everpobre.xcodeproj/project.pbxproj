@@ -24,8 +24,18 @@
 		AA190F091C85476600728949 /* AGTCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190F081C85476600728949 /* AGTCoreDataTableViewController.m */; };
 		AA190F121C854C3600728949 /* AOANotebooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA190F111C854C3600728949 /* AOANotebooksViewController.m */; };
 		AA8CC4661C858181001F8070 /* UIViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8CC4651C858181001F8070 /* UIViewController+Navigation.m */; };
+		AA9C87B21C88E4570049B963 /* AOANoteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9C87B11C88E4570049B963 /* AOANoteCollectionViewCell.xib */; };
+		AA9C87B51C88E5050049B963 /* AOANoteCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87B41C88E5050049B963 /* AOANoteCellView.m */; };
+		AA9C87B81C88E60A0049B963 /* AGTCoreDataCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87B71C88E60A0049B963 /* AGTCoreDataCollectionViewController.m */; };
+		AA9C87BE1C88E6D30049B963 /* AOANotesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA9C87BD1C88E6D30049B963 /* AOANotesViewController.m */; };
+		AA9C87C01C89425D0049B963 /* noImage.png in Resources */ = {isa = PBXBuildFile; fileRef = AA9C87BF1C89425D0049B963 /* noImage.png */; };
 		AAD2341C1C85D59900B5EE99 /* AOANoteBookCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD2341B1C85D59900B5EE99 /* AOANoteBookCellView.xib */; };
 		AAD2341F1C85D6B100B5EE99 /* AOANotebookCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD2341E1C85D6B100B5EE99 /* AOANotebookCellView.m */; };
+		AAD7662B1C8AB951002662D1 /* AOANoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD766291C8AB951002662D1 /* AOANoteViewController.m */; };
+		AAD7662C1C8AB951002662D1 /* AOANoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD7662A1C8AB951002662D1 /* AOANoteViewController.xib */; };
+		AAD766311C8B332C002662D1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD7662F1C8B318A002662D1 /* MapKit.framework */; };
+		AAD766351C8B4C85002662D1 /* AOAPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */; };
+		AAD766361C8B4C85002662D1 /* AOAPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,9 +73,25 @@
 		AA190F111C854C3600728949 /* AOANotebooksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOANotebooksViewController.m; sourceTree = "<group>"; };
 		AA8CC4641C858181001F8070 /* UIViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Navigation.h"; sourceTree = "<group>"; };
 		AA8CC4651C858181001F8070 /* UIViewController+Navigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Navigation.m"; sourceTree = "<group>"; };
+		AA9C87B11C88E4570049B963 /* AOANoteCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOANoteCollectionViewCell.xib; sourceTree = "<group>"; };
+		AA9C87B31C88E5050049B963 /* AOANoteCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOANoteCellView.h; sourceTree = "<group>"; };
+		AA9C87B41C88E5050049B963 /* AOANoteCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOANoteCellView.m; sourceTree = "<group>"; };
+		AA9C87B61C88E60A0049B963 /* AGTCoreDataCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTCoreDataCollectionViewController.h; sourceTree = "<group>"; };
+		AA9C87B71C88E60A0049B963 /* AGTCoreDataCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTCoreDataCollectionViewController.m; sourceTree = "<group>"; };
+		AA9C87BC1C88E6D30049B963 /* AOANotesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOANotesViewController.h; sourceTree = "<group>"; };
+		AA9C87BD1C88E6D30049B963 /* AOANotesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOANotesViewController.m; sourceTree = "<group>"; };
+		AA9C87BF1C89425D0049B963 /* noImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noImage.png; sourceTree = "<group>"; };
 		AAD2341B1C85D59900B5EE99 /* AOANoteBookCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOANoteBookCellView.xib; sourceTree = "<group>"; };
 		AAD2341D1C85D6B100B5EE99 /* AOANotebookCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AOANotebookCellView.h; path = ../AOANotebookCellView.h; sourceTree = "<group>"; };
 		AAD2341E1C85D6B100B5EE99 /* AOANotebookCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AOANotebookCellView.m; path = ../AOANotebookCellView.m; sourceTree = "<group>"; };
+		AAD766281C8AB951002662D1 /* AOANoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOANoteViewController.h; sourceTree = "<group>"; };
+		AAD766291C8AB951002662D1 /* AOANoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOANoteViewController.m; sourceTree = "<group>"; };
+		AAD7662A1C8AB951002662D1 /* AOANoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOANoteViewController.xib; sourceTree = "<group>"; };
+		AAD7662E1C8AEA1F002662D1 /* AOADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOADetailViewController.h; sourceTree = "<group>"; };
+		AAD7662F1C8B318A002662D1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		AAD766321C8B4C85002662D1 /* AOAPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAPhotoViewController.h; sourceTree = "<group>"; };
+		AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAPhotoViewController.m; sourceTree = "<group>"; };
+		AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AOAPhotoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD766311C8B332C002662D1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +109,7 @@
 		AA190EA41C835FA600728949 = {
 			isa = PBXGroup;
 			children = (
+				AAD7662F1C8B318A002662D1 /* MapKit.framework */,
 				AA190EAF1C835FA600728949 /* Everpobre */,
 				AA190EAE1C835FA600728949 /* Products */,
 			);
@@ -98,6 +126,8 @@
 		AA190EAF1C835FA600728949 /* Everpobre */ = {
 			isa = PBXGroup;
 			children = (
+				AAD7662D1C8AE9E5002662D1 /* Protocols */,
+				AA9C87C11C89426D0049B963 /* Resources */,
 				AAD2341A1C85D57600B5EE99 /* Views */,
 				AA8CC4631C856452001F8070 /* Categories */,
 				AA190F0A1C85476E00728949 /* Controllers */,
@@ -151,10 +181,20 @@
 		AA190F0A1C85476E00728949 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AA9C87B61C88E60A0049B963 /* AGTCoreDataCollectionViewController.h */,
+				AA9C87B71C88E60A0049B963 /* AGTCoreDataCollectionViewController.m */,
 				AA190F071C85476600728949 /* AGTCoreDataTableViewController.h */,
 				AA190F081C85476600728949 /* AGTCoreDataTableViewController.m */,
 				AA190F101C854C3600728949 /* AOANotebooksViewController.h */,
 				AA190F111C854C3600728949 /* AOANotebooksViewController.m */,
+				AA9C87BC1C88E6D30049B963 /* AOANotesViewController.h */,
+				AA9C87BD1C88E6D30049B963 /* AOANotesViewController.m */,
+				AAD766281C8AB951002662D1 /* AOANoteViewController.h */,
+				AAD766291C8AB951002662D1 /* AOANoteViewController.m */,
+				AAD7662A1C8AB951002662D1 /* AOANoteViewController.xib */,
+				AAD766321C8B4C85002662D1 /* AOAPhotoViewController.h */,
+				AAD766331C8B4C85002662D1 /* AOAPhotoViewController.m */,
+				AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -168,14 +208,33 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		AA9C87C11C89426D0049B963 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA9C87BF1C89425D0049B963 /* noImage.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		AAD2341A1C85D57600B5EE99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AAD2341D1C85D6B100B5EE99 /* AOANotebookCellView.h */,
 				AAD2341E1C85D6B100B5EE99 /* AOANotebookCellView.m */,
 				AAD2341B1C85D59900B5EE99 /* AOANoteBookCellView.xib */,
+				AA9C87B11C88E4570049B963 /* AOANoteCollectionViewCell.xib */,
+				AA9C87B31C88E5050049B963 /* AOANoteCellView.h */,
+				AA9C87B41C88E5050049B963 /* AOANoteCellView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		AAD7662D1C8AE9E5002662D1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7662E1C8AEA1F002662D1 /* AOADetailViewController.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +268,11 @@
 				TargetAttributes = {
 					AA190EAC1C835FA600728949 = {
 						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -235,7 +299,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA9C87B21C88E4570049B963 /* AOANoteCollectionViewCell.xib in Resources */,
+				AAD766361C8B4C85002662D1 /* AOAPhotoViewController.xib in Resources */,
 				AA190EB71C835FA600728949 /* Assets.xcassets in Resources */,
+				AAD7662C1C8AB951002662D1 /* AOANoteViewController.xib in Resources */,
+				AA9C87C01C89425D0049B963 /* noImage.png in Resources */,
 				AA190EBA1C835FA600728949 /* LaunchScreen.storyboard in Resources */,
 				AAD2341C1C85D59900B5EE99 /* AOANoteBookCellView.xib in Resources */,
 			);
@@ -250,17 +318,22 @@
 			files = (
 				AA190EFD1C8372E300728949 /* AOANotebook.m in Sources */,
 				AA190EFA1C8372E300728949 /* _AOANotebook.m in Sources */,
+				AA9C87B81C88E60A0049B963 /* AGTCoreDataCollectionViewController.m in Sources */,
 				AA190EF81C8372E300728949 /* _AOANamedEntity.m in Sources */,
 				AA190EF91C8372E300728949 /* _AOANote.m in Sources */,
 				AA190F031C837A4E00728949 /* AOAPhoto.m in Sources */,
+				AA9C87B51C88E5050049B963 /* AOANoteCellView.m in Sources */,
 				AA190EB51C835FA600728949 /* AppDelegate.m in Sources */,
+				AA9C87BE1C88E6D30049B963 /* AOANotesViewController.m in Sources */,
 				AA8CC4661C858181001F8070 /* UIViewController+Navigation.m in Sources */,
+				AAD766351C8B4C85002662D1 /* AOAPhotoViewController.m in Sources */,
 				AA190EB21C835FA600728949 /* main.m in Sources */,
 				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
 				AA190F091C85476600728949 /* AGTCoreDataTableViewController.m in Sources */,
 				AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */,
 				AA190EFC1C8372E300728949 /* AOANote.m in Sources */,
 				AA190F121C854C3600728949 /* AOANotebooksViewController.m in Sources */,
+				AAD7662B1C8AB951002662D1 /* AOANoteViewController.m in Sources */,
 				AAD2341F1C85D6B100B5EE99 /* AOANotebookCellView.m in Sources */,
 				AA190EC71C83607400728949 /* Model.xcdatamodeld in Sources */,
 				AA190F021C837A4E00728949 /* _AOAPhoto.m in Sources */,
