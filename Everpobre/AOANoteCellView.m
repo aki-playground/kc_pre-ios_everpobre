@@ -17,7 +17,7 @@
 
 +(NSArray *) keys
 {
-    return @[@"name", @"modificationDate", @"photo.image"];
+    return @[@"name", @"modificationDate", @"photo.image", @"location", @"location.latitude", @"location.longitude", @"location.address"];
 }
 
 
@@ -38,8 +38,13 @@
 
 - (void) syncWithNote
 {
-    //configurar la celca
+    //configurar la celda
     self.titleView.text = self.note.name;
+    NSDateFormatter *fmt = [NSDateFormatter new];
+    fmt.dateStyle = NSDateFormatterMediumStyle;
+    self.modificationDateView.text = [fmt stringFromDate: self.note.modificationDate];
+
+    
     UIImage *img;
     if(self.note.photo.image == nil){
         img = [UIImage imageNamed:@"noImage.png"];
@@ -48,11 +53,13 @@
     }
     self.photoView.image = img;
     
-    NSDateFormatter *fmt = [NSDateFormatter new];
-    fmt.dateStyle = NSDateFormatterMediumStyle;
-    
-    self.modificationDateView.text = [fmt stringFromDate: self.note.modificationDate];
 
+    if(self.note.hasLocation){
+        self.locationView.image = [UIImage imageNamed:@"placemark.png"];
+    } else {
+        self.locationView.image = nil;
+    }
+    
 }
 
 -(void) observeValueForKeyPath: (NSString *)keyPath

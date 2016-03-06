@@ -29,10 +29,14 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placemark.png" translatesAutoresizingMaskIntoConstraints="NO" id="r4H-s8-Rji">
+                        <rect key="frame" x="115" y="75" width="25" height="25"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <connections>
+                <outlet property="locationView" destination="r4H-s8-Rji" id="Bna-Ry-0nv"/>
                 <outlet property="modificationDateView" destination="0T7-Is-oTN" id="OY5-fR-297"/>
                 <outlet property="photoView" destination="j87-Pa-thi" id="a2N-ga-tn4"/>
                 <outlet property="titleView" destination="gAF-gS-ztN" id="aRi-lv-bCL"/>
@@ -42,5 +46,6 @@
     </objects>
     <resources>
         <image name="noImage.png" width="285" height="174"/>
+        <image name="placemark.png" width="256" height="256"/>
     </resources>
 </document>

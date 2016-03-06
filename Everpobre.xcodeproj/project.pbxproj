@@ -38,6 +38,8 @@
 		AAD766361C8B4C85002662D1 /* AOAPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD766341C8B4C85002662D1 /* AOAPhotoViewController.xib */; };
 		AAD7663C1C8B9577002662D1 /* _AOALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD766391C8B9577002662D1 /* _AOALocation.m */; };
 		AAD7663D1C8B9577002662D1 /* AOALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7663B1C8B9577002662D1 /* AOALocation.m */; };
+		AAD766401C8C0342002662D1 /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD7663E1C8C0342002662D1 /* placemark.png */; };
+		AAD766411C8C0342002662D1 /* placemark.pxm in Resources */ = {isa = PBXBuildFile; fileRef = AAD7663F1C8C0342002662D1 /* placemark.pxm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		AAD766391C8B9577002662D1 /* _AOALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AOALocation.m; sourceTree = SOURCE_ROOT; };
 		AAD7663A1C8B9577002662D1 /* AOALocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOALocation.h; sourceTree = SOURCE_ROOT; };
 		AAD7663B1C8B9577002662D1 /* AOALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOALocation.m; sourceTree = SOURCE_ROOT; };
+		AAD7663E1C8C0342002662D1 /* placemark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placemark.png; sourceTree = "<group>"; };
+		AAD7663F1C8C0342002662D1 /* placemark.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = placemark.pxm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,8 @@
 		AA9C87C11C89426D0049B963 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AAD7663E1C8C0342002662D1 /* placemark.png */,
+				AAD7663F1C8C0342002662D1 /* placemark.pxm */,
 				AA9C87BF1C89425D0049B963 /* noImage.png */,
 			);
 			name = Resources;
@@ -310,12 +316,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD766401C8C0342002662D1 /* placemark.png in Resources */,
 				AA9C87B21C88E4570049B963 /* AOANoteCollectionViewCell.xib in Resources */,
 				AAD766361C8B4C85002662D1 /* AOAPhotoViewController.xib in Resources */,
 				AA190EB71C835FA600728949 /* Assets.xcassets in Resources */,
 				AAD7662C1C8AB951002662D1 /* AOANoteViewController.xib in Resources */,
 				AA9C87C01C89425D0049B963 /* noImage.png in Resources */,
 				AA190EBA1C835FA600728949 /* LaunchScreen.storyboard in Resources */,
+				AAD766411C8C0342002662D1 /* placemark.pxm in Resources */,
 				AAD2341C1C85D59900B5EE99 /* AOANoteBookCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
