@@ -1,6 +1,10 @@
+#import "AOAMapSnapshot.h"
 #import "AOALocation.h"
 #import "AOANote.h"
+
+
 @import AddressBookUI;
+
 @interface AOALocation ()
 
 // Private interface goes here.
@@ -13,8 +17,8 @@
                                forNote: (AOANote *) note
 {
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[AOALocation entityName]];
-    NSPredicate *latitude = [NSPredicate predicateWithFormat:@"latitude = %f", location.coordinate.latitude];
-    NSPredicate *longitude = [NSPredicate predicateWithFormat:@"longitude = %f", location.coordinate.longitude];
+    NSPredicate *latitude = [NSPredicate predicateWithFormat:@"abs(latitude) - abs(%lf) < 0.001", location.coordinate.latitude];
+    NSPredicate *longitude = [NSPredicate predicateWithFormat:@"abs(longitude) - abs(%lf) < 0.001", location.coordinate.longitude];
     req.predicate = [NSCompoundPredicate andPredicateWithSubpredicates:@[latitude,longitude]];
     
     NSError *error = nil;
@@ -31,8 +35,12 @@
         loc.latitudeValue = location.coordinate.latitude;
         loc.longitudeValue = location.coordinate.longitude;
         
+        
         [loc addNotesObject:note];
         
+
+        
+        //DIRECCIÓN
         CLGeocoder *coder = [CLGeocoder new];
         [coder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
             if(error){
@@ -41,6 +49,10 @@
                 loc.address = ABCreateStringWithAddressDictionary([[placemarks lastObject] addressDictionary], YES);
             }
         }];
+        
+        //Map Snapsho
+        loc.mapSnapshot = [AOAMapSnapshot mapSnapshotForLocation:loc];
+        
         return loc;
     }
 }

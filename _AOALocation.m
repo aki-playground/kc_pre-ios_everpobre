@@ -10,6 +10,7 @@ const struct AOALocationAttributes AOALocationAttributes = {
 };
 
 const struct AOALocationRelationships AOALocationRelationships = {
+	.mapSnapshot = @"mapSnapshot",
 	.notes = @"notes",
 };
 
@@ -94,6 +95,8 @@ const struct AOALocationRelationships AOALocationRelationships = {
 - (void)setPrimitiveLongitudeValue:(double)value_ {
 	[self setPrimitiveLongitude:[NSNumber numberWithDouble:value_]];
 }
+
+@dynamic mapSnapshot;
 
 @dynamic notes;
 

@@ -34,16 +34,25 @@
     [super awakeFromInsert];
     CLAuthorizationStatus status = [CLLocationManager authorizationStatus];
     
-    if (((status == kCLAuthorizationStatusAuthorizedAlways) || (status == kCLAuthorizationStatusNotDetermined)) && [CLLocationManager locationServicesEnabled]){
+    if (((status == kCLAuthorizationStatusAuthorizedWhenInUse) || (status == kCLAuthorizationStatusNotDetermined)) && [CLLocationManager locationServicesEnabled]){
+
+        
         //Tenemos localización
         self.locationManager = [CLLocationManager new];
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        [self.locationManager startUpdatingHeading];
+
+        //Para que funcione en ios7 y 8 es necesario llamar a requestWhenInUseAuthorization y espear la respuesta con el método de delegado locationManager:didChangeAuthorizationStatus
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && status != kCLAuthorizationStatusAuthorizedWhenInUse){
+            [self.locationManager requestWhenInUseAuthorization];
+            //realizaremos llamada startUpdatingLocation en el método delegado locationManager:didChangeAuthorizationStatus
+        } else {
+            [self.locationManager startUpdatingLocation];
+        }
+
         
         //Límite de tiempo para obtener localicazión
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self zapLocationManager];
         });
     }
@@ -65,6 +74,25 @@
     
     
 }
+
+- (void)locationManager:(CLLocationManager*)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    switch (status) {
+        case kCLAuthorizationStatusNotDetermined: {
+            NSLog(@"User still thinking..");
+        } break;
+        case kCLAuthorizationStatusDenied: {
+            NSLog(@"User hates you");
+        } break;
+        case kCLAuthorizationStatusAuthorizedWhenInUse:
+        case kCLAuthorizationStatusAuthorizedAlways: {
+            [_locationManager startUpdatingLocation]; //Will update location immediately
+        } break;
+        default:
+            break;
+    }
+}
+
 
 
 #pragma mark - Utils

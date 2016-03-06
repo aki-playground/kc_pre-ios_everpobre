@@ -7,4 +7,5 @@
 //
 
 #define AUTO_SAVE NO
+#define ADD_DUMMY_DATA YES
 #define AUTO_SAVE_DELAY_IN_SECONDS 10

@@ -40,6 +40,10 @@
 		AAD7663D1C8B9577002662D1 /* AOALocation.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7663B1C8B9577002662D1 /* AOALocation.m */; };
 		AAD766401C8C0342002662D1 /* placemark.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD7663E1C8C0342002662D1 /* placemark.png */; };
 		AAD766411C8C0342002662D1 /* placemark.pxm in Resources */ = {isa = PBXBuildFile; fileRef = AAD7663F1C8C0342002662D1 /* placemark.pxm */; };
+		AAD766431C8C42A7002662D1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAD766421C8C42A7002662D1 /* CoreLocation.framework */; };
+		AAD766471C8C45F0002662D1 /* berastegi.gpx in Resources */ = {isa = PBXBuildFile; fileRef = AAD766461C8C45F0002662D1 /* berastegi.gpx */; };
+		AAD886E81C8CB8C7006B5418 /* _AOAMapSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD886E71C8CB8C7006B5418 /* _AOAMapSnapshot.m */; };
+		AAD886EB1C8CC756006B5418 /* AOAMapSnapshot.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD886EA1C8CC756006B5418 /* AOAMapSnapshot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +107,14 @@
 		AAD7663B1C8B9577002662D1 /* AOALocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOALocation.m; sourceTree = SOURCE_ROOT; };
 		AAD7663E1C8C0342002662D1 /* placemark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placemark.png; sourceTree = "<group>"; };
 		AAD7663F1C8C0342002662D1 /* placemark.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = placemark.pxm; sourceTree = "<group>"; };
+		AAD766421C8C42A7002662D1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		AAD766461C8C45F0002662D1 /* berastegi.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = berastegi.gpx; sourceTree = "<group>"; };
+		AAD886DF1C8C9FD8006B5418 /* Model3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model3.xcdatamodel; sourceTree = "<group>"; };
+		AAD886E61C8CB8C7006B5418 /* _AOAMapSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _AOAMapSnapshot.h; sourceTree = "<group>"; };
+		AAD886E71C8CB8C7006B5418 /* _AOAMapSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _AOAMapSnapshot.m; sourceTree = "<group>"; };
+		AAD886E91C8CC756006B5418 /* AOAMapSnapshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOAMapSnapshot.h; sourceTree = "<group>"; };
+		AAD886EA1C8CC756006B5418 /* AOAMapSnapshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AOAMapSnapshot.m; sourceTree = "<group>"; };
+		AAD886EC1C8CC7D7006B5418 /* noSnapshot.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = noSnapshot.pxm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD766431C8C42A7002662D1 /* CoreLocation.framework in Frameworks */,
 				AAD766311C8B332C002662D1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,6 +133,8 @@
 		AA190EA41C835FA600728949 = {
 			isa = PBXGroup;
 			children = (
+				AAD766461C8C45F0002662D1 /* berastegi.gpx */,
+				AAD766421C8C42A7002662D1 /* CoreLocation.framework */,
 				AAD7662F1C8B318A002662D1 /* MapKit.framework */,
 				AA190EAF1C835FA600728949 /* Everpobre */,
 				AA190EAE1C835FA600728949 /* Products */,
@@ -166,6 +181,10 @@
 		AA190EC11C835FAF00728949 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAD886E91C8CC756006B5418 /* AOAMapSnapshot.h */,
+				AAD886EA1C8CC756006B5418 /* AOAMapSnapshot.m */,
+				AAD886E61C8CB8C7006B5418 /* _AOAMapSnapshot.h */,
+				AAD886E71C8CB8C7006B5418 /* _AOAMapSnapshot.m */,
 				AAD766381C8B9577002662D1 /* _AOALocation.h */,
 				AAD766391C8B9577002662D1 /* _AOALocation.m */,
 				AAD7663A1C8B9577002662D1 /* AOALocation.h */,
@@ -226,6 +245,7 @@
 		AA9C87C11C89426D0049B963 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AAD886EC1C8CC7D7006B5418 /* noSnapshot.pxm */,
 				AAD7663E1C8C0342002662D1 /* placemark.png */,
 				AAD7663F1C8C0342002662D1 /* placemark.pxm */,
 				AA9C87BF1C89425D0049B963 /* noImage.png */,
@@ -322,6 +342,7 @@
 				AA190EB71C835FA600728949 /* Assets.xcassets in Resources */,
 				AAD7662C1C8AB951002662D1 /* AOANoteViewController.xib in Resources */,
 				AA9C87C01C89425D0049B963 /* noImage.png in Resources */,
+				AAD766471C8C45F0002662D1 /* berastegi.gpx in Resources */,
 				AA190EBA1C835FA600728949 /* LaunchScreen.storyboard in Resources */,
 				AAD766411C8C0342002662D1 /* placemark.pxm in Resources */,
 				AAD2341C1C85D59900B5EE99 /* AOANoteBookCellView.xib in Resources */,
@@ -342,6 +363,7 @@
 				AA190EF91C8372E300728949 /* _AOANote.m in Sources */,
 				AA190F031C837A4E00728949 /* AOAPhoto.m in Sources */,
 				AA9C87B51C88E5050049B963 /* AOANoteCellView.m in Sources */,
+				AAD886EB1C8CC756006B5418 /* AOAMapSnapshot.m in Sources */,
 				AA190EB51C835FA600728949 /* AppDelegate.m in Sources */,
 				AA9C87BE1C88E6D30049B963 /* AOANotesViewController.m in Sources */,
 				AA8CC4661C858181001F8070 /* UIViewController+Navigation.m in Sources */,
@@ -352,6 +374,7 @@
 				AA190EC41C835FBB00728949 /* AGTSimpleCoreDataStack.m in Sources */,
 				AA190F091C85476600728949 /* AGTCoreDataTableViewController.m in Sources */,
 				AA190EFB1C8372E300728949 /* AOANamedEntity.m in Sources */,
+				AAD886E81C8CB8C7006B5418 /* _AOAMapSnapshot.m in Sources */,
 				AA190EFC1C8372E300728949 /* AOANote.m in Sources */,
 				AA190F121C854C3600728949 /* AOANotebooksViewController.m in Sources */,
 				AAD7662B1C8AB951002662D1 /* AOANoteViewController.m in Sources */,
@@ -506,10 +529,11 @@
 		AA190EC51C83607400728949 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				AAD886DF1C8C9FD8006B5418 /* Model3.xcdatamodel */,
 				AAD766371C8B9312002662D1 /* Model2.xcdatamodel */,
 				AA190EC61C83607400728949 /* Model.xcdatamodel */,
 			);
-			currentVersion = AAD766371C8B9312002662D1 /* Model2.xcdatamodel */;
+			currentVersion = AAD886DF1C8C9FD8006B5418 /* Model3.xcdatamodel */;
 			name = Model.xcdatamodeld;
 			path = ../Model.xcdatamodeld;
 			sourceTree = "<group>";

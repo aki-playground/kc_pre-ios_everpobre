@@ -11,6 +11,8 @@
 #import "AOANotebook.h"
 #import "AOAPhoto.h"
 #import "AOAPhotoViewController.h"
+#import "AOALocation.h"
+#import "AOAMapSnapshot.h"
 @interface AOANoteViewController ()<UITextFieldDelegate>
 
 @property (strong, nonatomic) AOANote *model;
@@ -50,12 +52,24 @@
     self.nameView.text = self.model.name;
     self.textView.text = self.model.text;
     
+    //Image
     UIImage *img = self.model.photo.image;
     if(!img){
         img = [UIImage imageNamed:@"noImage.png"];
     }
     
     self.photoView.image = img;
+    
+    
+    
+    //Snapshot
+    img = self.model.location.mapSnapshot.image;
+    if(!img){
+        img = [UIImage imageNamed:@"noSnapshot.png"];
+    }
+    self.mapSnapshotView.image = img;
+    
+    [self startObservingSnapshot];
     
     [self startObservingKeyboard];
     
@@ -72,8 +86,14 @@
     self.nameView.delegate = self;
     
     
+    //Abrir detalle de imagen
     UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openImageDetail:)];
     [self.photoView addGestureRecognizer:tap];
+    
+    
+    //Abrir detalle de mapa
+    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openMapDetail:)];
+    [self.mapSnapshotView addGestureRecognizer:tap];
     
     UIBarButtonItem *share = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(displayShareController:)];
     self.navigationItem.rightBarButtonItem = share;
@@ -92,6 +112,7 @@
     }
     
     [self stopObservingKeyboard];
+    [self stopObservingSnapshot];
 }
 
 #pragma mark - Keyboard
@@ -221,6 +242,11 @@
     [self.navigationController pushViewController:pVC animated:YES];
 }
 
+-(void) openMapDetail:(id)self
+{
+    
+}
+
 -(void) displayShareController:(id)sender
 {
     //Crear un UIActivityController
@@ -245,5 +271,32 @@
     }
     
     return items;
+}
+
+#pragma mark - KVO
+
+-(void) startObservingSnapshot
+{
+    [self.model addObserver:self
+           forKeyPath:@"location.mapSnapshot.snapshotData"
+              options:NSKeyValueObservingOptionNew
+              context:NULL];
+}
+
+-(void) stopObservingSnapshot
+{
+    [self.model removeObserver:self
+              forKeyPath:@"location.mapSnapshot.snapshotData"];
+}
+
+-(void) observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context
+{
+    UIImage *img = self.model.location.mapSnapshot.image;
+    if(!img){
+        img = [UIImage imageNamed:@"noSnapshot.png"];
+    }
+    self.mapSnapshotView.image = img;
 }
 @end

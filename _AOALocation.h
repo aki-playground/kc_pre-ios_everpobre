@@ -10,9 +10,11 @@ extern const struct AOALocationAttributes {
 } AOALocationAttributes;
 
 extern const struct AOALocationRelationships {
+	__unsafe_unretained NSString *mapSnapshot;
 	__unsafe_unretained NSString *notes;
 } AOALocationRelationships;
 
+@class AOAMapSnapshot;
 @class AOANote;
 
 @interface AOALocationID : NSManagedObjectID {}
@@ -44,6 +46,10 @@ extern const struct AOALocationRelationships {
 
 //- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) AOAMapSnapshot *mapSnapshot;
+
+//- (BOOL)validateMapSnapshot:(id*)value_ error:(NSError**)error_;
+
 @property (nonatomic, strong) NSSet *notes;
 
 - (NSMutableSet*)notesSet;
@@ -74,6 +80,9 @@ extern const struct AOALocationRelationships {
 
 - (double)primitiveLongitudeValue;
 - (void)setPrimitiveLongitudeValue:(double)value_;
+
+- (AOAMapSnapshot*)primitiveMapSnapshot;
+- (void)setPrimitiveMapSnapshot:(AOAMapSnapshot*)value;
 
 - (NSMutableSet*)primitiveNotes;
 - (void)setPrimitiveNotes:(NSMutableSet*)value;

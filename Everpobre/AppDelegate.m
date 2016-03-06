@@ -11,6 +11,7 @@
 #import "AOANotebooksViewController.h"
 #import "AOANote.h"
 #import "AOANotebook.h"
+#import "AOALocation.h"
 #import "UIViewController+Navigation.h"
 
 @interface AppDelegate ()
@@ -23,6 +24,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.model = [AGTSimpleCoreDataStack coreDataStackWithModelName:@"Model"];
+    // ¿Añadimos datos chorras?
+    
+    if (ADD_DUMMY_DATA) {
+        [self addDummyData];
+        
+    }
+    
+    
+    // Iniciamos el inspector del contexto
+    [self printContextState];
+
     
     
     [self autoSave];
@@ -127,4 +139,73 @@
                    afterDelay:AUTO_SAVE_DELAY_IN_SECONDS];
     }
 }
+
+-(void) printContextState
+{
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:[AOANotebook entityName]];
+    NSUInteger numNotebooks = [[self.model executeRequest:req withError:nil] count];
+    
+    req = [NSFetchRequest fetchRequestWithEntityName:[AOANote entityName]];
+    NSUInteger numNotes = [[self.model executeRequest:req withError:nil] count];
+    
+    req = [NSFetchRequest fetchRequestWithEntityName:[AOALocation entityName]];
+    NSUInteger numLocations = [[self.model executeRequest:req withError:nil] count];
+    
+    printf("================================================");
+    printf("Total number of objects:      %lu\n", (unsigned long)self.model.context.registeredObjects.count);
+    printf("Number of notebooks:          %lu\n", (unsigned long)numNotebooks);
+    printf("Number of notes:              %lu\n", (unsigned long)numNotes);
+    printf("Number of locations:          %lu\n", (unsigned long)numLocations);
+    printf("================================================");
+    
+    [self performSelector: @selector(printContextState)
+               withObject: nil
+               afterDelay: 5];
+}
+
+
+-(void) addDummyData
+{
+    [self.model zapAllData];
+    
+    AOANotebook *familiaNB = [AOANotebook notebookWithName: @"Familia"
+                                                   context: self.model.context];
+    
+    [AOANote noteWithName:@"Akixe"
+                 notebook:familiaNB
+                  context:self.model.context];
+    
+    [AOANote noteWithName:@"Ixiar"
+                 notebook:familiaNB
+                  context:self.model.context];
+    
+    [AOANote noteWithName:@"Laira"
+                 notebook:familiaNB
+                  context:self.model.context];
+    
+    [AOANote noteWithName:@"Jare"
+                 notebook:familiaNB
+                  context:self.model.context];
+    
+    AOANotebook *lugaresNB = [AOANotebook notebookWithName: @"Lugares donde han pasado frikadas"
+                                                   context: self.model.context];
+    
+    
+
+    [AOANote noteWithName:@"Area 51"
+                 notebook:lugaresNB
+                  context:self.model.context];
+    [AOANote noteWithName:@"Plató de Cuarto Milenio: Friker Jiménez Land"
+                 notebook:lugaresNB
+                  context:self.model.context];
+    [AOANote noteWithName:@"Triángulo de las Bermudas"
+                 notebook:lugaresNB
+                  context:self.model.context];
+    [AOANote noteWithName:@"Plató de Sálvame:Hard Frikerio"
+                 notebook:lugaresNB
+                  context:self.model.context];
+
+    [self save];
+}
 @end
+
