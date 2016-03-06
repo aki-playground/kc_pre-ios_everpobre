@@ -44,8 +44,9 @@
     if(self.note.photo.image == nil){
         img = [UIImage imageNamed:@"noImage.png"];
     } else {
-        self.photoView.image = self.note.photo.image;
+        img = self.note.photo.image;
     }
+    self.photoView.image = img;
     
     NSDateFormatter *fmt = [NSDateFormatter new];
     fmt.dateStyle = NSDateFormatterMediumStyle;

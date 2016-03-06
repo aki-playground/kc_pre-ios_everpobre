@@ -92,7 +92,7 @@
     //Crear una celda
     AOANotebookCellView *cell = [tableView dequeueReusableCellWithIdentifier:[AOANotebookCellView cellId]];
     cell.nameView.text = nb.name;
-    cell.numberOfNotesView.text = [NSString stringWithFormat: @"%ul", [nb.notes count] ];
+    cell.numberOfNotesView.text = [NSString stringWithFormat: @"%lul", (unsigned long)[nb.notes count] ];
     return cell;
 }
 

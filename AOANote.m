@@ -1,20 +1,20 @@
 #import "AOANote.h"
-
-@interface AOANote ()
+#import "AOALocation.h"
+@interface AOANote ()<CLLocationManagerDelegate>
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @end
 
-@implementation AOANote <CLLocationManagerDelegate>
+@implementation AOANote
 
 @synthesize locationManager = _locationManager;
 
 -(BOOL) hasLocation
 {
-    return (nil == self.location);
+    return (nil != self.location);
 }
 
 +(NSArray *) observableKeyNames{
-    return @[@"creationDate", @"name", @"notebook", @"photo"];
+    return @[@"creationDate", @"name", @"notebook", @"photo", @"location"];
 }
 
 +(instancetype) noteWithName:(NSString *) name notebook:(AOANotebook *) notebook context: (NSManagedObjectContext *) context{
@@ -40,6 +40,12 @@
         self.locationManager.delegate = self;
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         [self.locationManager startUpdatingHeading];
+        
+        //Límite de tiempo para obtener localicazión
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self zapLocationManager];
+        });
     }
 }
 
@@ -48,12 +54,24 @@
 -(void)     locationManager: (CLLocationManager *) manager
          didUpdateLocations: (nonnull NSArray<CLLocation *> *)locations
 {
+    [self zapLocationManager];
+    if(![self hasLocation]){
+        CLLocation *location = [locations lastObject];
+        self.location = [AOALocation locationWithCLLocation:location forNote:self];
+    } else {
+        NSLog(@"No se ha obtenido localización");
+    }
+    
+    
+    
+}
+
+
+#pragma mark - Utils
+-(void) zapLocationManager
+{
     [self.locationManager stopUpdatingLocation];
-    self.locationManager = nil; //si no lo hacemos seguiría pidiendo la localización a pesar del Stop
-    CLLocation *location = [locations lastObject];
-    
-    self.location = [AOALocation locationWithCLLocation: locations forNote: self];
-    
-    
+    self.locationManager.delegate = nil; //Por los bugs que hay
+    self.locationManager = nil;
 }
 @end
